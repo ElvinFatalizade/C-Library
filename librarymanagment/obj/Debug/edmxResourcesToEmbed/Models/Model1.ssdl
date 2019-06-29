@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="librarymanagmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bookmaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="auth" Type="nvarchar" MaxLength="50" />
+    <Property Name="edition" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="membermaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="planmaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="doc" Type="nvarchar" MaxLength="50" />
+    <Property Name="booklimit" Type="int" />
+    <Property Name="bookvalidity" Type="int" />
+    <Property Name="amount" Type="int" />
+    <Property Name="diss" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="profilemaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="int" />
+    <Property Name="adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="profileuser">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="password" Type="int" />
+    <Property Name="adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+    <Property Name="role" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="purchasemain">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="dateid" Type="int" />
+    <Property Name="amount" Type="int" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="purchasesub">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="dateid" Type="int" />
+    <Property Name="bookid" Type="int" />
+    <Property Name="bookname" Type="nvarchar" MaxLength="50" />
+    <Property Name="amount" Type="int" />
+  </EntityType>
+  <EntityType Name="registerbook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="rolemaster">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="role" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="stacks">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="bookid" Type="int" />
+    <Property Name="bookname" Type="nvarchar" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_purchasemain_purchasesub">
+    <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="0..1" />
+    <End Role="purchasemain" Type="Self.purchasemain" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="purchasesub">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="purchasemain">
+        <PropertyRef Name="dateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_purchasesub_stacks">
+    <End Role="stacks" Type="Self.stacks" Multiplicity="0..1" />
+    <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="stacks">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="purchasesub">
+        <PropertyRef Name="bookid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="librarymanagmentModelStoreContainer">
+    <EntitySet Name="bookmaster" EntityType="Self.bookmaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="membermaster" EntityType="Self.membermaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="planmaster" EntityType="Self.planmaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="profilemaster" EntityType="Self.profilemaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="profileuser" EntityType="Self.profileuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchasemain" EntityType="Self.purchasemain" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="purchasesub" EntityType="Self.purchasesub" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="registerbook" EntityType="Self.registerbook" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="rolemaster" EntityType="Self.rolemaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="stacks" EntityType="Self.stacks" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_purchasemain_purchasesub" Association="Self.FK_purchasemain_purchasesub">
+      <End Role="purchasesub" EntitySet="purchasesub" />
+      <End Role="purchasemain" EntitySet="purchasemain" />
+    </AssociationSet>
+    <AssociationSet Name="FK_purchasesub_stacks" Association="Self.FK_purchasesub_stacks">
+      <End Role="stacks" EntitySet="stacks" />
+      <End Role="purchasesub" EntitySet="purchasesub" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

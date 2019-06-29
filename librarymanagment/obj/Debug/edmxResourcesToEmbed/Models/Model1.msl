@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="librarymanagmentModelStoreContainer" CdmEntityContainer="librarymanagmentEntities1">
+    <EntitySetMapping Name="bookmasters">
+      <EntityTypeMapping TypeName="librarymanagmentModel.bookmaster">
+        <MappingFragment StoreEntitySet="bookmaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="auth" ColumnName="auth" />
+          <ScalarProperty Name="edition" ColumnName="edition" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="membermasters">
+      <EntityTypeMapping TypeName="librarymanagmentModel.membermaster">
+        <MappingFragment StoreEntitySet="membermaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="planmasters">
+      <EntityTypeMapping TypeName="librarymanagmentModel.planmaster">
+        <MappingFragment StoreEntitySet="planmaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="doc" ColumnName="doc" />
+          <ScalarProperty Name="booklimit" ColumnName="booklimit" />
+          <ScalarProperty Name="bookvalidity" ColumnName="bookvalidity" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="diss" ColumnName="diss" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profilemasters">
+      <EntityTypeMapping TypeName="librarymanagmentModel.profilemaster">
+        <MappingFragment StoreEntitySet="profilemaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="profileusers">
+      <EntityTypeMapping TypeName="librarymanagmentModel.profileuser">
+        <MappingFragment StoreEntitySet="profileuser">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchasemains">
+      <EntityTypeMapping TypeName="librarymanagmentModel.purchasemain">
+        <MappingFragment StoreEntitySet="purchasemain">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="dateid" ColumnName="dateid" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="purchasesubs">
+      <EntityTypeMapping TypeName="librarymanagmentModel.purchasesub">
+        <MappingFragment StoreEntitySet="purchasesub">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="dateid" ColumnName="dateid" />
+          <ScalarProperty Name="bookid" ColumnName="bookid" />
+          <ScalarProperty Name="bookname" ColumnName="bookname" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registerbooks">
+      <EntityTypeMapping TypeName="librarymanagmentModel.registerbook">
+        <MappingFragment StoreEntitySet="registerbook">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="rolemasters">
+      <EntityTypeMapping TypeName="librarymanagmentModel.rolemaster">
+        <MappingFragment StoreEntitySet="rolemaster">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="stacks">
+      <EntityTypeMapping TypeName="librarymanagmentModel.stack">
+        <MappingFragment StoreEntitySet="stacks">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="bookid" ColumnName="bookid" />
+          <ScalarProperty Name="bookname" ColumnName="bookname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
