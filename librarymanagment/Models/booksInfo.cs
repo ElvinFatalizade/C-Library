@@ -12,14 +12,13 @@ namespace librarymanagment.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class purchasemain
+    public partial class booksInfo
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public Nullable<int> dateid { get; set; }
-        public Nullable<int> amount { get; set; }
-        public string status { get; set; }
-    
-        public virtual purchasesub purchasesub { get; set; }
+        public string books_name { get; set; }
+        public string books_author_name { get; set; }
+        public Nullable<System.DateTime> books_publication_date { get; set; }
+        public Nullable<decimal> books_price { get; set; }
+        public Nullable<int> books_quantity { get; set; }
     }
 }

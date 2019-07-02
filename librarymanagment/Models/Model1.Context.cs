@@ -13,10 +13,10 @@ namespace librarymanagment.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class librarymanagmentEntities1 : DbContext
+    public partial class library_managmentEntities2 : DbContext
     {
-        public librarymanagmentEntities1()
-            : base("name=librarymanagmentEntities1")
+        public library_managmentEntities2()
+            : base("name=library_managmentEntities2")
         {
         }
     
@@ -25,15 +25,8 @@ namespace librarymanagment.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<bookmaster> bookmasters { get; set; }
-        public virtual DbSet<membermaster> membermasters { get; set; }
-        public virtual DbSet<planmaster> planmasters { get; set; }
-        public virtual DbSet<profilemaster> profilemasters { get; set; }
-        public virtual DbSet<profileuser> profileusers { get; set; }
-        public virtual DbSet<purchasemain> purchasemains { get; set; }
-        public virtual DbSet<purchasesub> purchasesubs { get; set; }
-        public virtual DbSet<registerbook> registerbooks { get; set; }
-        public virtual DbSet<rolemaster> rolemasters { get; set; }
-        public virtual DbSet<stack> stacks { get; set; }
+        public virtual DbSet<booksInfo> booksInfoes { get; set; }
+        public virtual DbSet<login> logins { get; set; }
+        public virtual DbSet<person_infos> person_infos { get; set; }
     }
 }

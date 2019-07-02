@@ -4,19 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="74b224dd1c884637a0c0a5c80c8712aa" Name="Diagram1">
-        <EntityTypeShape EntityType="librarymanagmentModel.bookmaster" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.membermaster" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.planmaster" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.profilemaster" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.profileuser" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.purchasemain" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.purchasesub" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.registerbook" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.rolemaster" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="librarymanagmentModel.stack" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <AssociationConnector Association="librarymanagmentModel.FK_purchasemain_purchasesub" ManuallyRouted="false" />
-        <AssociationConnector Association="librarymanagmentModel.FK_purchasesub_stacks" ManuallyRouted="false" />
+      <Diagram DiagramId="e06537d6dd584351904ccd62552c2e7b" Name="Diagram1">
+        <EntityTypeShape EntityType="library_managmentModel.booksInfo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_managmentModel.login" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="library_managmentModel.person_infos" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

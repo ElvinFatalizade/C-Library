@@ -7,12 +7,14 @@ C:\Users\user\source\repos\librarymanagment\librarymanagment\bin\Debug\MaterialS
 C:\Users\user\source\repos\librarymanagment\librarymanagment\bin\Debug\EntityFramework.xml
 C:\Users\user\source\repos\librarymanagment\librarymanagment\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.csprojAssemblyReference.cache
-C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.Form1.resources
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.Properties.Resources.resources
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.csproj.GenerateResource.cache
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.csproj.CoreCompileInputs.cache
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.csproj.CopyComplete
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.exe
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.pdb
-C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.LMS.resources
-C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.masterprofile.resources
+C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.login.resources
+C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.users.resources
+C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.addbooks.resources
+C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.srch.resources
+C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.addperson.resources

@@ -4,423 +4,121 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="librarymanagmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="bookmaster">
+      <Schema Namespace="library_managmentModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="booksInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="books_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="books_author_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="books_publication_date" Type="date" />
+          <Property Name="books_price" Type="money" />
+          <Property Name="books_quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="login">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="auth" Type="nvarchar" MaxLength="50" />
-          <Property Name="edition" Type="int" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Fullname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="membermaster">
+        <EntityType Name="person_infos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" />
-          <Property Name="mobile" Type="nvarchar" MaxLength="50" />
-          <Property Name="adress" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
         </EntityType>
-        <EntityType Name="planmaster">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="doc" Type="nvarchar" MaxLength="50" />
-          <Property Name="booklimit" Type="int" />
-          <Property Name="bookvalidity" Type="int" />
-          <Property Name="amount" Type="int" />
-          <Property Name="diss" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="profilemaster">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="50" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" />
-          <Property Name="phone" Type="nvarchar" MaxLength="50" />
-          <Property Name="password" Type="int" />
-          <Property Name="adress" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="profileuser">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nchar" MaxLength="50" />
-          <Property Name="email" Type="nvarchar" MaxLength="50" />
-          <Property Name="phone" Type="nvarchar" MaxLength="50" />
-          <Property Name="password" Type="int" />
-          <Property Name="adress" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
-          <Property Name="role" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="purchasemain">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" />
-          <Property Name="dateid" Type="int" />
-          <Property Name="amount" Type="int" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="purchasesub">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="dateid" Type="int" />
-          <Property Name="bookid" Type="int" />
-          <Property Name="bookname" Type="nvarchar" MaxLength="50" />
-          <Property Name="amount" Type="int" />
-        </EntityType>
-        <EntityType Name="registerbook">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="rolemaster">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="role" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="stacks">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="bookid" Type="int" />
-          <Property Name="bookname" Type="nvarchar" MaxLength="50" />
-          <Property Name="status" Type="nvarchar" MaxLength="50" />
-        </EntityType>
-        <Association Name="FK_purchasemain_purchasesub">
-          <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="0..1" />
-          <End Role="purchasemain" Type="Self.purchasemain" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="purchasesub">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="purchasemain">
-              <PropertyRef Name="dateid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_purchasesub_stacks">
-          <End Role="stacks" Type="Self.stacks" Multiplicity="0..1" />
-          <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="stacks">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="purchasesub">
-              <PropertyRef Name="bookid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="librarymanagmentModelStoreContainer">
-          <EntitySet Name="bookmaster" EntityType="Self.bookmaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="membermaster" EntityType="Self.membermaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="planmaster" EntityType="Self.planmaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="profilemaster" EntityType="Self.profilemaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="profileuser" EntityType="Self.profileuser" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="purchasemain" EntityType="Self.purchasemain" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="purchasesub" EntityType="Self.purchasesub" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="registerbook" EntityType="Self.registerbook" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="rolemaster" EntityType="Self.rolemaster" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="stacks" EntityType="Self.stacks" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_purchasemain_purchasesub" Association="Self.FK_purchasemain_purchasesub">
-            <End Role="purchasesub" EntitySet="purchasesub" />
-            <End Role="purchasemain" EntitySet="purchasemain" />
-          </AssociationSet>
-          <AssociationSet Name="FK_purchasesub_stacks" Association="Self.FK_purchasesub_stacks">
-            <End Role="stacks" EntitySet="stacks" />
-            <End Role="purchasesub" EntitySet="purchasesub" />
-          </AssociationSet>
+        <EntityContainer Name="library_managmentModelStoreContainer">
+          <EntitySet Name="booksInfo" EntityType="Self.booksInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="person_infos" EntityType="Self.person_infos" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="librarymanagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="bookmaster">
+      <Schema Namespace="library_managmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="booksInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="books_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="books_author_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="books_publication_date" Type="DateTime" Precision="0" />
+          <Property Name="books_price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="books_quantity" Type="Int32" />
+        </EntityType>
+        <EntityType Name="login">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="auth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="edition" Type="Int32" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="membermaster">
+        <EntityType Name="person_infos">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="planmaster">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="doc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="booklimit" Type="Int32" />
-          <Property Name="bookvalidity" Type="Int32" />
-          <Property Name="amount" Type="Int32" />
-          <Property Name="diss" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="profilemaster">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="Int32" />
-          <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="profileuser">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="Int32" />
-          <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="purchasemain">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="dateid" Type="Int32" />
-          <Property Name="amount" Type="Int32" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="purchasesub" Relationship="Self.FK_purchasemain_purchasesub" FromRole="purchasemain" ToRole="purchasesub" />
-        </EntityType>
-        <EntityType Name="purchasesub">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="dateid" Type="Int32" />
-          <Property Name="bookid" Type="Int32" />
-          <Property Name="bookname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="amount" Type="Int32" />
-          <NavigationProperty Name="purchasemains" Relationship="Self.FK_purchasemain_purchasesub" FromRole="purchasesub" ToRole="purchasemain" />
-          <NavigationProperty Name="stack" Relationship="Self.FK_purchasesub_stacks" FromRole="purchasesub" ToRole="stacks" />
-        </EntityType>
-        <EntityType Name="registerbook">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="rolemaster">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="stack">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="bookid" Type="Int32" />
-          <Property Name="bookname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="purchasesubs" Relationship="Self.FK_purchasesub_stacks" FromRole="stacks" ToRole="purchasesub" />
-        </EntityType>
-        <Association Name="FK_purchasemain_purchasesub">
-          <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="0..1" />
-          <End Role="purchasemain" Type="Self.purchasemain" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="purchasesub">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="purchasemain">
-              <PropertyRef Name="dateid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_purchasesub_stacks">
-          <End Role="stacks" Type="Self.stack" Multiplicity="0..1" />
-          <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="stacks">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="purchasesub">
-              <PropertyRef Name="bookid" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="librarymanagmentEntities1" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="bookmasters" EntityType="Self.bookmaster" />
-          <EntitySet Name="membermasters" EntityType="Self.membermaster" />
-          <EntitySet Name="planmasters" EntityType="Self.planmaster" />
-          <EntitySet Name="profilemasters" EntityType="Self.profilemaster" />
-          <EntitySet Name="profileusers" EntityType="Self.profileuser" />
-          <EntitySet Name="purchasemains" EntityType="Self.purchasemain" />
-          <EntitySet Name="purchasesubs" EntityType="Self.purchasesub" />
-          <EntitySet Name="registerbooks" EntityType="Self.registerbook" />
-          <EntitySet Name="rolemasters" EntityType="Self.rolemaster" />
-          <EntitySet Name="stacks" EntityType="Self.stack" />
-          <AssociationSet Name="FK_purchasemain_purchasesub" Association="Self.FK_purchasemain_purchasesub">
-            <End Role="purchasesub" EntitySet="purchasesubs" />
-            <End Role="purchasemain" EntitySet="purchasemains" />
-          </AssociationSet>
-          <AssociationSet Name="FK_purchasesub_stacks" Association="Self.FK_purchasesub_stacks">
-            <End Role="stacks" EntitySet="stacks" />
-            <End Role="purchasesub" EntitySet="purchasesubs" />
-          </AssociationSet>
+        <EntityContainer Name="library_managmentEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="booksInfoes" EntityType="Self.booksInfo" />
+          <EntitySet Name="logins" EntityType="Self.login" />
+          <EntitySet Name="person_infos" EntityType="Self.person_infos" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="librarymanagmentModelStoreContainer" CdmEntityContainer="librarymanagmentEntities1">
-          <EntitySetMapping Name="bookmasters">
-            <EntityTypeMapping TypeName="librarymanagmentModel.bookmaster">
-              <MappingFragment StoreEntitySet="bookmaster">
+        <EntityContainerMapping StorageEntityContainer="library_managmentModelStoreContainer" CdmEntityContainer="library_managmentEntities2">
+          <EntitySetMapping Name="booksInfoes">
+            <EntityTypeMapping TypeName="library_managmentModel.booksInfo">
+              <MappingFragment StoreEntitySet="booksInfo">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="auth" ColumnName="auth" />
-                <ScalarProperty Name="edition" ColumnName="edition" />
-                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="books_name" ColumnName="books_name" />
+                <ScalarProperty Name="books_author_name" ColumnName="books_author_name" />
+                <ScalarProperty Name="books_publication_date" ColumnName="books_publication_date" />
+                <ScalarProperty Name="books_price" ColumnName="books_price" />
+                <ScalarProperty Name="books_quantity" ColumnName="books_quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="membermasters">
-            <EntityTypeMapping TypeName="librarymanagmentModel.membermaster">
-              <MappingFragment StoreEntitySet="membermaster">
+          <EntitySetMapping Name="logins">
+            <EntityTypeMapping TypeName="library_managmentModel.login">
+              <MappingFragment StoreEntitySet="login">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="mobile" ColumnName="mobile" />
-                <ScalarProperty Name="adress" ColumnName="adress" />
-                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="planmasters">
-            <EntityTypeMapping TypeName="librarymanagmentModel.planmaster">
-              <MappingFragment StoreEntitySet="planmaster">
+          <EntitySetMapping Name="person_infos">
+            <EntityTypeMapping TypeName="library_managmentModel.person_infos">
+              <MappingFragment StoreEntitySet="person_infos">
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="doc" ColumnName="doc" />
-                <ScalarProperty Name="booklimit" ColumnName="booklimit" />
-                <ScalarProperty Name="bookvalidity" ColumnName="bookvalidity" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="diss" ColumnName="diss" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="profilemasters">
-            <EntityTypeMapping TypeName="librarymanagmentModel.profilemaster">
-              <MappingFragment StoreEntitySet="profilemaster">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="adress" ColumnName="adress" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="profileusers">
-            <EntityTypeMapping TypeName="librarymanagmentModel.profileuser">
-              <MappingFragment StoreEntitySet="profileuser">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="email" ColumnName="email" />
-                <ScalarProperty Name="phone" ColumnName="phone" />
-                <ScalarProperty Name="password" ColumnName="password" />
-                <ScalarProperty Name="adress" ColumnName="adress" />
-                <ScalarProperty Name="status" ColumnName="status" />
-                <ScalarProperty Name="role" ColumnName="role" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="purchasemains">
-            <EntityTypeMapping TypeName="librarymanagmentModel.purchasemain">
-              <MappingFragment StoreEntitySet="purchasemain">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="dateid" ColumnName="dateid" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="purchasesubs">
-            <EntityTypeMapping TypeName="librarymanagmentModel.purchasesub">
-              <MappingFragment StoreEntitySet="purchasesub">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="dateid" ColumnName="dateid" />
-                <ScalarProperty Name="bookid" ColumnName="bookid" />
-                <ScalarProperty Name="bookname" ColumnName="bookname" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="registerbooks">
-            <EntityTypeMapping TypeName="librarymanagmentModel.registerbook">
-              <MappingFragment StoreEntitySet="registerbook">
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="rolemasters">
-            <EntityTypeMapping TypeName="librarymanagmentModel.rolemaster">
-              <MappingFragment StoreEntitySet="rolemaster">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="role" ColumnName="role" />
-                <ScalarProperty Name="status" ColumnName="status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="stacks">
-            <EntityTypeMapping TypeName="librarymanagmentModel.stack">
-              <MappingFragment StoreEntitySet="stacks">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="bookid" ColumnName="bookid" />
-                <ScalarProperty Name="bookname" ColumnName="bookname" />
-                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

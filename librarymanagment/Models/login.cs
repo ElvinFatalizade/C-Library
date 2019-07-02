@@ -12,13 +12,12 @@ namespace librarymanagment.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class membermaster
+    public partial class login
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public string mobile { get; set; }
-        public string adress { get; set; }
-        public string status { get; set; }
+        public string Fullname { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public string Email { get; set; }
     }
 }

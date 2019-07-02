@@ -1,153 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="librarymanagmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="bookmaster">
+<Schema Namespace="library_managmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="booksInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="books_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="books_author_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="books_publication_date" Type="DateTime" Precision="0" />
+    <Property Name="books_price" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="books_quantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="login">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="auth" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="edition" Type="Int32" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="membermaster">
+  <EntityType Name="person_infos">
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="planmaster">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="doc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="booklimit" Type="Int32" />
-    <Property Name="bookvalidity" Type="Int32" />
-    <Property Name="amount" Type="Int32" />
-    <Property Name="diss" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="profilemaster">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="password" Type="Int32" />
-    <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="profileuser">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
-    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="password" Type="Int32" />
-    <Property Name="adress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="purchasemain">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="dateid" Type="Int32" />
-    <Property Name="amount" Type="Int32" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="purchasesub" Relationship="Self.FK_purchasemain_purchasesub" FromRole="purchasemain" ToRole="purchasesub" />
-  </EntityType>
-  <EntityType Name="purchasesub">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="dateid" Type="Int32" />
-    <Property Name="bookid" Type="Int32" />
-    <Property Name="bookname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="amount" Type="Int32" />
-    <NavigationProperty Name="purchasemains" Relationship="Self.FK_purchasemain_purchasesub" FromRole="purchasesub" ToRole="purchasemain" />
-    <NavigationProperty Name="stack" Relationship="Self.FK_purchasesub_stacks" FromRole="purchasesub" ToRole="stacks" />
-  </EntityType>
-  <EntityType Name="registerbook">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="rolemaster">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-  </EntityType>
-  <EntityType Name="stack">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="bookid" Type="Int32" />
-    <Property Name="bookname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="purchasesubs" Relationship="Self.FK_purchasesub_stacks" FromRole="stacks" ToRole="purchasesub" />
-  </EntityType>
-  <Association Name="FK_purchasemain_purchasesub">
-    <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="0..1" />
-    <End Role="purchasemain" Type="Self.purchasemain" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="purchasesub">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="purchasemain">
-        <PropertyRef Name="dateid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_purchasesub_stacks">
-    <End Role="stacks" Type="Self.stack" Multiplicity="0..1" />
-    <End Role="purchasesub" Type="Self.purchasesub" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="stacks">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="purchasesub">
-        <PropertyRef Name="bookid" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="librarymanagmentEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="bookmasters" EntityType="Self.bookmaster" />
-    <EntitySet Name="membermasters" EntityType="Self.membermaster" />
-    <EntitySet Name="planmasters" EntityType="Self.planmaster" />
-    <EntitySet Name="profilemasters" EntityType="Self.profilemaster" />
-    <EntitySet Name="profileusers" EntityType="Self.profileuser" />
-    <EntitySet Name="purchasemains" EntityType="Self.purchasemain" />
-    <EntitySet Name="purchasesubs" EntityType="Self.purchasesub" />
-    <EntitySet Name="registerbooks" EntityType="Self.registerbook" />
-    <EntitySet Name="rolemasters" EntityType="Self.rolemaster" />
-    <EntitySet Name="stacks" EntityType="Self.stack" />
-    <AssociationSet Name="FK_purchasemain_purchasesub" Association="Self.FK_purchasemain_purchasesub">
-      <End Role="purchasesub" EntitySet="purchasesubs" />
-      <End Role="purchasemain" EntitySet="purchasemains" />
-    </AssociationSet>
-    <AssociationSet Name="FK_purchasesub_stacks" Association="Self.FK_purchasesub_stacks">
-      <End Role="stacks" EntitySet="stacks" />
-      <End Role="purchasesub" EntitySet="purchasesubs" />
-    </AssociationSet>
+  <EntityContainer Name="library_managmentEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="booksInfoes" EntityType="Self.booksInfo" />
+    <EntitySet Name="logins" EntityType="Self.login" />
+    <EntitySet Name="person_infos" EntityType="Self.person_infos" />
   </EntityContainer>
 </Schema>

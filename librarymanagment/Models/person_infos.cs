@@ -12,14 +12,12 @@ namespace librarymanagment.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class profilemaster
+    public partial class person_infos
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string email { get; set; }
-        public string phone { get; set; }
-        public Nullable<int> password { get; set; }
-        public string adress { get; set; }
-        public string status { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
     }
 }
