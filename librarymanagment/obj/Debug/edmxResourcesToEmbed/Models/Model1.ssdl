@@ -11,6 +11,16 @@
     <Property Name="books_price" Type="money" />
     <Property Name="books_quantity" Type="int" />
   </EntityType>
+  <EntityType Name="customerInfos">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" />
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="login">
     <Key>
       <PropertyRef Name="id" />
@@ -33,6 +43,7 @@
   </EntityType>
   <EntityContainer Name="library_managmentModelStoreContainer">
     <EntitySet Name="booksInfo" EntityType="Self.booksInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customerInfos" EntityType="Self.customerInfos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="person_infos" EntityType="Self.person_infos" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

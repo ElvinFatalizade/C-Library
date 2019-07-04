@@ -38,6 +38,11 @@
             this.Txtph = new System.Windows.Forms.TextBox();
             this.Btnadd = new MaterialSkin.Controls.MaterialFlatButton();
             this.Dgvpr = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Lbllist = new MaterialSkin.Controls.MaterialFlatButton();
             this.Btnupdate = new MaterialSkin.Controls.MaterialFlatButton();
             this.Txtp = new System.Windows.Forms.TextBox();
@@ -48,11 +53,6 @@
             this.materialLabel3 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btndelete = new MaterialSkin.Controls.MaterialFlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.Dgvpr)).BeginInit();
             this.SuspendLayout();
@@ -171,6 +171,32 @@
             this.Dgvpr.TabIndex = 9;
             this.Dgvpr.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dgvpr_RowHeaderMouseDoubleClick);
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "ID";
+            this.Column5.Name = "Column5";
+            this.Column5.Visible = false;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Name";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Surname";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Email";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Phone";
+            this.Column4.Name = "Column4";
+            // 
             // Lbllist
             // 
             this.Lbllist.AutoSize = true;
@@ -284,32 +310,6 @@
             this.materialLabel1.TabIndex = 11;
             this.materialLabel1.Text = "Name";
             // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "ID";
-            this.Column5.Name = "Column5";
-            this.Column5.Visible = false;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Name";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Surname";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Email";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Phone";
-            this.Column4.Name = "Column4";
-            // 
             // Btndelete
             // 
             this.Btndelete.AutoSize = true;
@@ -354,6 +354,7 @@
             this.Controls.Add(this.Txtsurname);
             this.Controls.Add(this.Txtname);
             this.Name = "addperson";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Person Info";
             ((System.ComponentModel.ISupportInitialize)(this.Dgvpr)).EndInit();
             this.ResumeLayout(false);

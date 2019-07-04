@@ -11,6 +11,16 @@
     <Property Name="books_price" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="books_quantity" Type="Int32" />
   </EntityType>
+  <EntityType Name="customerInfo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
   <EntityType Name="login">
     <Key>
       <PropertyRef Name="id" />
@@ -31,8 +41,9 @@
     <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="library_managmentEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="library_managmentEntities3" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="booksInfoes" EntityType="Self.booksInfo" />
+    <EntitySet Name="customerInfos" EntityType="Self.customerInfo" />
     <EntitySet Name="logins" EntityType="Self.login" />
     <EntitySet Name="person_infos" EntityType="Self.person_infos" />
   </EntityContainer>

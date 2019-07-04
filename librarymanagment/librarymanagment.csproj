@@ -85,6 +85,12 @@
     <Compile Include="addperson.Designer.cs">
       <DependentUpon>addperson.cs</DependentUpon>
     </Compile>
+    <Compile Include="customer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customer.Designer.cs">
+      <DependentUpon>customer.cs</DependentUpon>
+    </Compile>
     <Compile Include="dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,9 @@
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\booksInfo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\customerInfo.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\login.cs">
@@ -134,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="addperson.resx">
       <DependentUpon>addperson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customer.resx">
+      <DependentUpon>customer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>

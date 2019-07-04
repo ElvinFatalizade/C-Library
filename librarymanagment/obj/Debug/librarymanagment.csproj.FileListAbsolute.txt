@@ -18,3 +18,4 @@ C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\libraryma
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.addbooks.resources
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.srch.resources
 C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.addperson.resources
+C:\Users\user\source\repos\librarymanagment\librarymanagment\obj\Debug\librarymanagment.customer.resources

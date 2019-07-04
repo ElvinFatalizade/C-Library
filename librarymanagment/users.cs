@@ -10,12 +10,14 @@ using System.Windows.Forms;
 
 namespace librarymanagment
 {
-    public partial class users :Form
+    public partial class users : Form
     {
         public users()
         {
             InitializeComponent();
-  
+           
+           
+
         }
 
         private void AddNewBookToolStripMenuItem_Click(object sender, EventArgs e)
@@ -42,6 +44,13 @@ namespace librarymanagment
             addperson addpr = new addperson();
             addpr.Show();
             this.Hide();
+        }
+
+        private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            customer cs = new customer();
+            cs.Show();
+            
         }
     }
 }

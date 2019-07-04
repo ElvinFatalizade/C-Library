@@ -94,6 +94,7 @@
             this.Controls.Add(this.Txtsearch);
             this.Controls.Add(this.Lblsearch);
             this.Name = "srch";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Book";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Srch_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Dgvsearch)).EndInit();
