@@ -14,13 +14,13 @@ namespace librarymanagment
 {
     public partial class addbooks : MaterialSkin.Controls.MaterialForm
     {
-       private  library_managmentEntities3 _context;
+       private  library_managmentEntities5 _context;
 
         booksInfo  selectedbooks;
 
         public addbooks()
         {
-            this._context = new library_managmentEntities3 ();
+            this._context = new library_managmentEntities5 ();
             InitializeComponent();
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);
@@ -122,11 +122,15 @@ namespace librarymanagment
             BookList();
         }
 
+      
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+
+        
             _context.booksInfoes.Remove(selectedbooks);
             _context.SaveChanges();
             BookList();
+
 
         }
     }

@@ -17,13 +17,13 @@ namespace librarymanagment
     {
        
 
-        private library_managmentEntities3 _context;
+        private library_managmentEntities5 _context;
 
         person_infos selectedperson;
 
         public addperson()
         {
-            this._context = new library_managmentEntities3();
+            this._context = new library_managmentEntities5();
             InitializeComponent();
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);

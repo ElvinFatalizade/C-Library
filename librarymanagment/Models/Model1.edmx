@@ -26,6 +26,19 @@
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="customerissue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Customer_email" Type="nvarchar" MaxLength="50" />
+          <Property Name="customer_phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="book_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="book_issue_date" Type="date" />
+          <Property Name="book_price" Type="int" />
+        </EntityType>
         <EntityType Name="login">
           <Key>
             <PropertyRef Name="id" />
@@ -49,6 +62,7 @@
         <EntityContainer Name="library_managmentModelStoreContainer">
           <EntitySet Name="booksInfo" EntityType="Self.booksInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="customerInfos" EntityType="Self.customerInfos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customerissue" EntityType="Self.customerissue" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="person_infos" EntityType="Self.person_infos" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -78,6 +92,19 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="customerissue">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customer_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Customer_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="customer_phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="book_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="book_issue_date" Type="DateTime" Precision="0" />
+          <Property Name="book_price" Type="Int32" />
+        </EntityType>
         <EntityType Name="login">
           <Key>
             <PropertyRef Name="id" />
@@ -98,9 +125,10 @@
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="library_managmentEntities3" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="library_managmentEntities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="booksInfoes" EntityType="Self.booksInfo" />
           <EntitySet Name="customerInfos" EntityType="Self.customerInfo" />
+          <EntitySet Name="customerissues" EntityType="Self.customerissue" />
           <EntitySet Name="logins" EntityType="Self.login" />
           <EntitySet Name="person_infos" EntityType="Self.person_infos" />
         </EntityContainer>
@@ -109,7 +137,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="library_managmentModelStoreContainer" CdmEntityContainer="library_managmentEntities3">
+        <EntityContainerMapping StorageEntityContainer="library_managmentModelStoreContainer" CdmEntityContainer="library_managmentEntities5">
           <EntitySetMapping Name="booksInfoes">
             <EntityTypeMapping TypeName="library_managmentModel.booksInfo">
               <MappingFragment StoreEntitySet="booksInfo">
@@ -130,6 +158,20 @@
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customerissues">
+            <EntityTypeMapping TypeName="library_managmentModel.customerissue">
+              <MappingFragment StoreEntitySet="customerissue">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+                <ScalarProperty Name="customer_surname" ColumnName="customer_surname" />
+                <ScalarProperty Name="Customer_email" ColumnName="Customer_email" />
+                <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+                <ScalarProperty Name="book_name" ColumnName="book_name" />
+                <ScalarProperty Name="book_issue_date" ColumnName="book_issue_date" />
+                <ScalarProperty Name="book_price" ColumnName="book_price" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

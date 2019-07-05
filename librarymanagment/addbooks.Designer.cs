@@ -61,6 +61,7 @@
             this.Txtbp = new System.Windows.Forms.TextBox();
             this.Txtbq = new System.Windows.Forms.TextBox();
             this.BtnDelete = new MaterialSkin.Controls.MaterialFlatButton();
+            this.materialContextMenuStrip1 = new MaterialSkin.Controls.MaterialContextMenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.Dgvlist)).BeginInit();
             this.SuspendLayout();
             // 
@@ -404,6 +405,15 @@
             this.BtnDelete.Visible = false;
             this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
+            // materialContextMenuStrip1
+            // 
+            this.materialContextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialContextMenuStrip1.Depth = 0;
+            this.materialContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
+            this.materialContextMenuStrip1.Size = new System.Drawing.Size(211, 32);
+            // 
             // addbooks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -482,5 +492,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private MaterialSkin.Controls.MaterialFlatButton BtnDelete;
+        private MaterialSkin.Controls.MaterialContextMenuStrip materialContextMenuStrip1;
     }
 }

@@ -21,6 +21,19 @@
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
     <Property Name="Phone" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="customerissue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="customer_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_surname" Type="nvarchar" MaxLength="50" />
+    <Property Name="Customer_email" Type="nvarchar" MaxLength="50" />
+    <Property Name="customer_phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="book_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="book_issue_date" Type="date" />
+    <Property Name="book_price" Type="int" />
+  </EntityType>
   <EntityType Name="login">
     <Key>
       <PropertyRef Name="id" />
@@ -44,6 +57,7 @@
   <EntityContainer Name="library_managmentModelStoreContainer">
     <EntitySet Name="booksInfo" EntityType="Self.booksInfo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="customerInfos" EntityType="Self.customerInfos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customerissue" EntityType="Self.customerissue" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="login" EntityType="Self.login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="person_infos" EntityType="Self.person_infos" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

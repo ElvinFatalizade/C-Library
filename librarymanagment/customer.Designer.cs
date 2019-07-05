@@ -44,7 +44,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Btnadd = new MaterialSkin.Controls.MaterialFlatButton();
             this.Btnlist = new MaterialSkin.Controls.MaterialFlatButton();
-            this.Btndelete = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btndel = new MaterialSkin.Controls.MaterialFlatButton();
             this.materialLabel5 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel6 = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabel7 = new MaterialSkin.Controls.MaterialLabel();
@@ -53,7 +53,7 @@
             this.Txtsu = new System.Windows.Forms.TextBox();
             this.Txtem = new System.Windows.Forms.TextBox();
             this.Txtph = new System.Windows.Forms.TextBox();
-            this.Btnupdate = new MaterialSkin.Controls.MaterialFlatButton();
+            this.Btnupd = new MaterialSkin.Controls.MaterialFlatButton();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             ((System.ComponentModel.ISupportInitialize)(this.Dgvcustom)).BeginInit();
             this.SuspendLayout();
@@ -212,22 +212,22 @@
             this.Btnlist.UseVisualStyleBackColor = true;
             this.Btnlist.Click += new System.EventHandler(this.Btnlist_Click);
             // 
-            // Btndelete
+            // Btndel
             // 
-            this.Btndelete.AutoSize = true;
-            this.Btndelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btndelete.Depth = 0;
-            this.Btndelete.Location = new System.Drawing.Point(287, 402);
-            this.Btndelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Btndelete.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Btndelete.Name = "Btndelete";
-            this.Btndelete.Primary = false;
-            this.Btndelete.Size = new System.Drawing.Size(73, 36);
-            this.Btndelete.TabIndex = 11;
-            this.Btndelete.Text = "Delete";
-            this.Btndelete.UseVisualStyleBackColor = true;
-            this.Btndelete.Visible = false;
-            this.Btndelete.Click += new System.EventHandler(this.Btndelete_Click);
+            this.Btndel.AutoSize = true;
+            this.Btndel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btndel.Depth = 0;
+            this.Btndel.Location = new System.Drawing.Point(287, 402);
+            this.Btndel.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btndel.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btndel.Name = "Btndel";
+            this.Btndel.Primary = false;
+            this.Btndel.Size = new System.Drawing.Size(73, 36);
+            this.Btndel.TabIndex = 11;
+            this.Btndel.Text = "Delete";
+            this.Btndel.UseVisualStyleBackColor = true;
+            this.Btndel.Visible = false;
+            this.Btndel.Click += new System.EventHandler(this.Btndelete_Click);
             // 
             // materialLabel5
             // 
@@ -309,22 +309,22 @@
             this.Txtph.Size = new System.Drawing.Size(235, 22);
             this.Txtph.TabIndex = 19;
             // 
-            // Btnupdate
+            // Btnupd
             // 
-            this.Btnupdate.AutoSize = true;
-            this.Btnupdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Btnupdate.Depth = 0;
-            this.Btnupdate.Location = new System.Drawing.Point(651, 642);
-            this.Btnupdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.Btnupdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.Btnupdate.Name = "Btnupdate";
-            this.Btnupdate.Primary = false;
-            this.Btnupdate.Size = new System.Drawing.Size(78, 36);
-            this.Btnupdate.TabIndex = 20;
-            this.Btnupdate.Text = "Update";
-            this.Btnupdate.UseVisualStyleBackColor = true;
-            this.Btnupdate.Visible = false;
-            this.Btnupdate.Click += new System.EventHandler(this.Btnupdate_Click);
+            this.Btnupd.AutoSize = true;
+            this.Btnupd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Btnupd.Depth = 0;
+            this.Btnupd.Location = new System.Drawing.Point(651, 642);
+            this.Btnupd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.Btnupd.MouseState = MaterialSkin.MouseState.HOVER;
+            this.Btnupd.Name = "Btnupd";
+            this.Btnupd.Primary = false;
+            this.Btnupd.Size = new System.Drawing.Size(78, 36);
+            this.Btnupd.TabIndex = 20;
+            this.Btnupd.Text = "Update";
+            this.Btnupd.UseVisualStyleBackColor = true;
+            this.Btnupd.Visible = false;
+            this.Btnupd.Click += new System.EventHandler(this.Btnupdate_Click);
             // 
             // monthCalendar1
             // 
@@ -338,7 +338,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1367, 707);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.Btnupdate);
+            this.Controls.Add(this.Btnupd);
             this.Controls.Add(this.Txtph);
             this.Controls.Add(this.Txtem);
             this.Controls.Add(this.Txtsu);
@@ -347,7 +347,7 @@
             this.Controls.Add(this.materialLabel7);
             this.Controls.Add(this.materialLabel6);
             this.Controls.Add(this.materialLabel5);
-            this.Controls.Add(this.Btndelete);
+            this.Controls.Add(this.Btndel);
             this.Controls.Add(this.Btnlist);
             this.Controls.Add(this.Btnadd);
             this.Controls.Add(this.Dgvcustom);
@@ -385,7 +385,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private MaterialSkin.Controls.MaterialFlatButton Btnadd;
         private MaterialSkin.Controls.MaterialFlatButton Btnlist;
-        private MaterialSkin.Controls.MaterialFlatButton Btndelete;
+        private MaterialSkin.Controls.MaterialFlatButton Btndel;
         private MaterialSkin.Controls.MaterialLabel materialLabel5;
         private MaterialSkin.Controls.MaterialLabel materialLabel6;
         private MaterialSkin.Controls.MaterialLabel materialLabel7;
@@ -394,7 +394,7 @@
         private System.Windows.Forms.TextBox Txtsu;
         private System.Windows.Forms.TextBox Txtem;
         private System.Windows.Forms.TextBox Txtph;
-        private MaterialSkin.Controls.MaterialFlatButton Btnupdate;
+        private MaterialSkin.Controls.MaterialFlatButton Btnupd;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }

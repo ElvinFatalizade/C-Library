@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="library_managmentModelStoreContainer" CdmEntityContainer="library_managmentEntities3">
+  <EntityContainerMapping StorageEntityContainer="library_managmentModelStoreContainer" CdmEntityContainer="library_managmentEntities5">
     <EntitySetMapping Name="booksInfoes">
       <EntityTypeMapping TypeName="library_managmentModel.booksInfo">
         <MappingFragment StoreEntitySet="booksInfo">
@@ -21,6 +21,20 @@
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customerissues">
+      <EntityTypeMapping TypeName="library_managmentModel.customerissue">
+        <MappingFragment StoreEntitySet="customerissue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="customer_name" ColumnName="customer_name" />
+          <ScalarProperty Name="customer_surname" ColumnName="customer_surname" />
+          <ScalarProperty Name="Customer_email" ColumnName="Customer_email" />
+          <ScalarProperty Name="customer_phone" ColumnName="customer_phone" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_issue_date" ColumnName="book_issue_date" />
+          <ScalarProperty Name="book_price" ColumnName="book_price" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

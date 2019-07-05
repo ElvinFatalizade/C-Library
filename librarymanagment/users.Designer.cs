@@ -35,6 +35,8 @@
             this.personToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addNewPersonToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customeIssueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,10 +93,27 @@
             // 
             // customerToolStripMenuItem
             // 
+            this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.customeIssueToolStripMenuItem,
+            this.customerToolStripMenuItem1});
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
-            this.customerToolStripMenuItem.Text = "Customer";
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(90, 24);
+            this.customerToolStripMenuItem.Text = "Customers";
             this.customerToolStripMenuItem.Click += new System.EventHandler(this.CustomerToolStripMenuItem_Click);
+            // 
+            // customeIssueToolStripMenuItem
+            // 
+            this.customeIssueToolStripMenuItem.Name = "customeIssueToolStripMenuItem";
+            this.customeIssueToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.customeIssueToolStripMenuItem.Text = "Customer";
+            this.customeIssueToolStripMenuItem.Click += new System.EventHandler(this.CustomeIssueToolStripMenuItem_Click);
+            // 
+            // customerToolStripMenuItem1
+            // 
+            this.customerToolStripMenuItem1.Name = "customerToolStripMenuItem1";
+            this.customerToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.customerToolStripMenuItem1.Text = "Customer Issue";
+            this.customerToolStripMenuItem1.Click += new System.EventHandler(this.CustomerToolStripMenuItem1_Click);
             // 
             // users
             // 
@@ -123,5 +142,7 @@
         private System.Windows.Forms.ToolStripMenuItem personToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addNewPersonToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customeIssueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customerToolStripMenuItem1;
     }
 }

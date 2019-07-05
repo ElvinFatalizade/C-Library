@@ -16,10 +16,10 @@ namespace librarymanagment
     {
         SqlConnection con = new SqlConnection(@"Server=DESKTOP-DFSVU7E\MSSQLSERVER02;Database=library_managment;Trusted_Connection=True;");
 
-        private library_managmentEntities3 _context;
+        private library_managmentEntities5 _context;
         public srch()
         {
-            this._context = new library_managmentEntities3();
+            this._context = new library_managmentEntities5();
             InitializeComponent();
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
             skinManager.AddFormToManage(this);

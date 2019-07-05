@@ -48,9 +48,23 @@ namespace librarymanagment
 
         private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          
+            
+        }
+
+        private void CustomeIssueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             customer cs = new customer();
             cs.Show();
-            
+
+           
+
+        }
+
+        private void CustomerToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            customeissue issue = new customeissue();
+            issue.Show();
         }
     }
 }

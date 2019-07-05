@@ -14,13 +14,13 @@ namespace librarymanagment
     public partial class customer : MaterialSkin.Controls.MaterialForm
 
     {
-        private library_managmentEntities3 _context;
+        private library_managmentEntities5 _context;
 
-        customerInfo custom;
+        customerInfo custom= new customerInfo();
 
         public customer()
         {
-            this._context = new library_managmentEntities3();
+            this._context = new library_managmentEntities5();
 
             InitializeComponent();
             MaterialSkin.MaterialSkinManager skinManager = MaterialSkin.MaterialSkinManager.Instance;
@@ -63,8 +63,8 @@ namespace librarymanagment
 
         private void Dgvcustom_RowDividerDoubleClick(object sender, DataGridViewRowDividerDoubleClickEventArgs e)
         {
-            Btndelete.Visible = true;
-            Btnupdate.Visible = true;
+            Btndel.Visible = true;
+            Btnupd.Visible = true;
 
             int customid = Convert.ToInt32(Dgvcustom.Rows[e.RowIndex].Cells[0].Value);
             custom = _context.customerInfos.Find(customid);
