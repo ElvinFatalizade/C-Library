@@ -54,5 +54,10 @@ namespace librarymanagment
         {
             Application.Exit();
         }
+
+        private void Srch_FormClosed_1(object sender, FormClosedEventArgs e)
+        {
+
+        }
     }
 }

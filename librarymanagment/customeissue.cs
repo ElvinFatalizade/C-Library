@@ -8,15 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using librarymanagment.Models;
-using System.Data.SqlClient;
+
 
 namespace librarymanagment
 {
     public partial class customeissue : MaterialSkin.Controls.MaterialForm
 
     {
-        SqlConnection con = new SqlConnection(@"Server=DESKTOP-DFSVU7E\MSSQLSERVER02;Database=library_managment;Trusted_Connection=True;");
+
+       
+     
         private library_managmentEntities5 context;
+
+        customerissue cs;
 
         public customeissue()
         {
@@ -46,96 +50,60 @@ namespace librarymanagment
                 book_name = Txt5.Text,
                 book_issue_date = Dt6.Value,
                 book_price = Convert.ToInt32(Txt7.Text),
-                customer_enrollment_no=Txtenrollment.Text
+               
                 
                 
-            };
+            }; 
             context.customerissues.Add(csm);
             context.SaveChanges();
             MessageBox.Show("Info add");
         }
 
-        private void Txt5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ListBox1_KeyUp(object sender, KeyEventArgs e)
-        {
-            int count = 0;
-
-
-            if(e.KeyCode != Keys.Enter)
-            {
-
-                con.Open();
-                SqlCommand cm = con.CreateCommand();
-                cm.CommandType = CommandType.Text;
-                cm.CommandText = "SELECT  * FROM booksInfo WHERE books_name like('%" + Txt5.Text + "%')";
-                cm.ExecuteNonQuery();
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cm);
-                da.Fill(dt);
-                count = Convert.ToInt32(dt.Rows.Count.ToString());
-
-                if (count > 0)
-                {
-                    listBox1.Visible = true;
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        listBox1.Items.Add(dr["books_name"].ToString());
-                    }
-                }
-
-
-                con.Close();
-
-            }
-
-
-         
-          
-        }
 
         private void Btnsearch_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            con.Open();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT * FROM customerissue WHERE customer_enrollment_no='" + textBox1.Text + "'";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-
-            i = Convert.ToInt32(dt.Rows.Count.ToString());
-           
-                if (i == 0)
-                {
-                    MessageBox.Show("This enrollmet not found");
-                }
-                else
-                {
-                  foreach(DataRow dr in dt.Rows)
-                    {
-                        Txt1.Text = dr["customer_name"].ToString();
-                        Txt2.Text = dr["customer_surname"].ToString();
-                    Txt3.Text = dr["Customer_email"].ToString();
-                    Txt4.Text = dr["customer_phone"].ToString();
-                   
-
-
-                    }
-                }
-            con.Close();
-            }
-        
         }
+
+        public void custom()
+        {
+            Dgvlist.Rows.Clear();
+
+            List<customerissue> issue = this.context.customerissues.ToList();
+
+            foreach (customerissue item in issue)
+            {
+
+                Dgvlist.Rows.Add(item.id, item.customer_name, item.customer_surname, item.Customer_email, item.customer_phone, item.book_name, item.book_issue_date, item.book_price);
+
+
+            }
+        }
+
+        private void Btnlist_Click(object sender, EventArgs e)
+        {
+            custom();
+           
+        }
+
+        private void Dgvlist_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int idcustom = Convert.ToInt32(Dgvlist.Rows[e.RowIndex].Cells[0].Value);
+            cs = context.customerissues.Find(idcustom);
+            lblname.Text = cs.customer_name;
+            lblemail.Text = cs.Customer_email;
+            lblphone.Text = cs.customer_phone;
+            lblbookname.Text = cs.book_name;
+            lblissuedate.Text = cs.book_issue_date.ToString();
+            lblbookprice.Text = cs.book_price.ToString();
+            
+            
+        }
+
+        private void Btnreturn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+    }
     }
 

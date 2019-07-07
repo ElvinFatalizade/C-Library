@@ -24,26 +24,26 @@ namespace librarymanagment
         {
             addbooks book = new addbooks();
             book.Show();
-            this.Hide();
+            
         }
 
         private void Users_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Application.Exit();
+            Application.Exit();
         }
 
         private void SearchToolStripMenuItem_Click(object sender, EventArgs e)
         {
             srch sr = new srch();
             sr.Show();
-            this.Hide();
+           
         }
 
         private void AddNewPersonToolStripMenuItem_Click(object sender, EventArgs e)
         {
             addperson addpr = new addperson();
             addpr.Show();
-            this.Hide();
+           
         }
 
         private void CustomerToolStripMenuItem_Click(object sender, EventArgs e)

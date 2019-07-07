@@ -96,7 +96,7 @@
             this.Name = "srch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Search Book";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Srch_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Srch_FormClosed_1);
             ((System.ComponentModel.ISupportInitialize)(this.Dgvsearch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

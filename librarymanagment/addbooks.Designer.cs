@@ -412,7 +412,7 @@
             this.materialContextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.materialContextMenuStrip1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialContextMenuStrip1.Name = "materialContextMenuStrip1";
-            this.materialContextMenuStrip1.Size = new System.Drawing.Size(211, 32);
+            this.materialContextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // addbooks
             // 
@@ -450,7 +450,6 @@
             this.Name = "addbooks";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Books";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Addbooks_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.Dgvlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
